@@ -1,0 +1,287 @@
+#chat-screen {
+  background-color: #abc1d1;
+  height: 500vh;
+}
+
+#chat-screen .status-bar,
+#chat-screen .alt-header {
+  position: fixed;
+  width: 100%;
+  background-color: #abc1d1;
+  box-sizing: border-box;
+}
+
+#chat-screen .status-bar {
+  top: 0;
+  z-index: 2;
+}
+
+#chat-screen .alt-header {
+  top: 10px;
+  z-index: 1
+}
+
+@keyframes fadeIn{
+  from{
+    transform:translateY(30px);
+    topacity:0;
+    -webkit-transform:translateY(30px);
+    -moz-transform:translateY(30px);
+    -ms-transform:translateY(30px);
+    -o-transform:translateY(30px);
+}
+  to{
+    opacity:1;
+    transform: none  ;
+    -webkit-transform: none  ;
+    -moz-transform: none  ;
+    -ms-transform: none  ;
+    -o-transform: none  ;
+}
+}
+
+.main-chat {
+  margin-top: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn 0.3s linear;
+  -webkit-animation: fadeIn 0.3s linear;
+  overflow-x: hidden;
+}
+
+.chat__timestamp {
+  background-color: #92a4b2;
+  padding: 15px;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+  margin-bottom: 25px;
+}
+
+
+@keyframes msgFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+    -webkit-transform: translateX(-100px);
+    -moz-transform: translateX(-100px);
+    -ms-transform: translateX(-100px);
+    -o-transform: translateX(-100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: none;
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+  }
+}
+
+@keyframes msgOwnFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+    -webkit-transform: translateX(100px);
+    -moz-transform: translateX(100px);
+    -ms-transform: translateX(100px);
+    -o-transform: translateX(100px);
+}
+
+  100% {
+    opacity: 1;
+    transform: none;
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+  }
+}
+
+.message-row {
+  width: 100%;
+  display: flex;
+  margin-bottom: 25px;
+  animation: msgFadeIn .8s ease-out;
+  -webkit-animation: msgFadeIn .8s ease-out;
+}
+
+.message-row img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  margin-right: 15px;
+}
+
+.message__author {
+  margin-bottom: 15px;
+  display: block;
+}
+
+.message__info {
+  display: flex;
+  align-items: flex-end;
+}
+
+.message__bubble {
+  background: #fff;
+  padding: 13px;
+  font-size: 18px;
+  border-radius: 0px 15px 15px 15px;
+  -webkit-border-radius: 0px 15px 15px 15px;
+  -moz-border-radius: 0px 15px 15px 15px;
+  -ms-border-radius: 0px 15px 15px 15px;
+  -o-border-radius: 0px 15px 15px 15px;
+  margin-right: 5px;
+}
+
+.message__author,
+.message__time {
+  font-size: 14px;
+  opacity: .8;
+}
+
+.message-row--own {
+  justify-content: flex-end;
+  animation: msgOwnFadeIn .8s ease-out;
+  -webkit-animation: msgOwnFadeIn .8s ease-out;
+}
+
+.message-row--own .message__info {
+  flex-direction: row-reverse;
+}
+
+.message-row--own .message__bubble {
+  margin-right: 0;
+  margin-left: 5px;
+  background-color: var(--yellow);
+  border-radius: 15px 0 15px 15px;
+  -webkit-border-radius: 15px 0 15px 15px;
+  -moz-border-radius: 15px 0 15px 15px;
+  -ms-border-radius: 15px 0 15px 15px;
+  -o-border-radius: 15px 0 15px 15px;
+}
+
+.reply {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 25px;
+  align-items: center;
+  box-sizing: border-box;
+  transition:all 0.3s ease-in-out;
+  -webkit-transition:all 0.3s ease-in-out;
+  -moz-transition:all 0.3s ease-in-out;
+  -ms-transition:all 0.3s ease-in-out;
+  -o-transition:all 0.3s ease-in-out;
+}
+
+.reply i{
+  opacity:0.5;
+}
+
+.reply .reply__column:first-child {
+  width: 10%;
+}
+
+.reply .reply__column:last-child {
+  width: 90%;
+  position: relative;
+}
+
+.reply input {
+  width: 100%;
+  padding:12px;
+  border: var(--main-border);
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  box-sizing:border-box;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+}
+
+.reply__column:last-child > i,
+.reply__column:last-child button {
+  position: absolute;
+  right: 3px;
+  top: 3px;
+}
+
+.reply__column:last-child>i {
+  right: 40px;
+  top: 10px;
+}
+
+.reply__column:last-child button {
+  background-color: var(--yellow);
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.reply__column:last-child button:focus,
+.reply__column:last-child button:active {
+  outline: none;
+}
+.reply__column:last-child button i{
+  opacity:1;
+}
+
+.reply .reply__column:first-child,
+.reply .fa-smile-wink,
+.reply button{
+  transition: opacity .3s ease-in-out;
+  -webkit-transition: opacity .3s ease-in-out;
+  -moz-transition: opacity .3s ease-in-out;
+  -ms-transition: opacity .3s ease-in-out;
+  -o-transition: opacity .3s ease-in-out;
+}
+
+.reply:focus-within .reply__column:first-child {
+  opacity: 0;
+  visibility: hidden;
+}
+.reply:focus-within .reply__column:first-child,
+.reply:focus-within .fa-smile-wink,
+.reply:focus-within button{
+  opacity:0;
+}
+.reply:focus-within  input{
+  width:96vw;
+  transform: translateX(-13%) translateY(-80px);
+  -webkit-transform: translateX(-13%) translateY(-80px);
+  -moz-transform: translateX(-13%) translateY(-80px);
+  -ms-transform: translateX(-13%) translateY(-80px);
+  -o-transform: translateX(-13%) translateY(-80px);
+}
+.reply:focus-within  {
+  transform: translateY(80px);
+  -webkit-transform: translateY(80px);
+  -moz-transform: translateY(80px);
+  -ms-transform: translateY(80px);
+  -o-transform: translateY(80px);
+}

@@ -18,35 +18,82 @@
   color: #2e363e;
 }
 
-.nav__notification {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background-color: tomato;
-  color: #fff;
-  font-weight: 600;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  left: 15px;
-  bottom:15px;
+@keyframes nitificationAnimation {
+  0% {
+    transform: none;
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+  }
+
+  50% {
+    transform: translateY(-5px) rotateY(360deg);
+    -webkit-transform: translateY(-5px) rotateY(360deg);
+    -moz-transform: translateY(-5px) rotateY(360deg);
+    -ms-transform: translateY(-5px) rotateY(360deg);
+    -o-transform: translateY(-5px) rotateY(360deg);
+  }
+
+  100% {
+    transform: none;
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+  }
 }
 
-.nav__notificaion-ver2{
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background-color: tomato;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
-  position:absolute;
+.nav__notification {
+  position: absolute;
+  left: 15px;
+  bottom: 15px;
+  animation: nitificationAnimation 3s ease-in-out infinite;
+  -webkit-animation: nitificationAnimation 3s ease-in-out infinite;
+}
+
+.nav__notificaion-new {
+  position: absolute;
   right: -2.5px;
-  top:-12.5px;
+  top: -12.5px;
+}
+
+@keyframes appearBtnAnimation {
+  from {
+    transform: translateY(50px);
+    -webkit-transform: translateY(50px);
+    -moz-transform: translateY(50px);
+    -ms-transform: translateY(50px);
+    -o-transform: translateY(50px);
+    opacity:1;
+}
+
+  to {
+    transform: none;
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+    opacity:1;
+  }
+}
+
+.nav__btn {
+  animation:appearBtnAnimation .3s ease-in-out  forwards;
+  -webkit-animation:appearBtnAnimation .3s ease-in-out  forwards;
+  opacity:0;
+  transform: translateY(50px);
+  -webkit-transform: translateY(50px);
+  -moz-transform: translateY(50px);
+  -ms-transform: translateY(50px);
+  -o-transform: translateY(50px);
+}
+.nav__btn:nth-child(2){
+  animation-delay: 0.2s;
+}
+.nav__btn:nth-child(3){
+  animation-delay: 0.5s;
+}
+.nav__btn:last-child{
+  animation-delay: 0.8s;
 }
