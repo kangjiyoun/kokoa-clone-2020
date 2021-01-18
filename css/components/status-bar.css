@@ -2,19 +2,40 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding:5px 3px;
+  padding: 5px 3px;
 }
-.status-bar__column{width:33%;}
-.status-bar__column:first-child span{
-  margin-right:5px;
+
+.status-bar__column {
+  width: 33%;
 }
-.status-bar__column:nth-child(2){
+
+.status-bar__column:first-child span {
+  margin-right: 5px;
+}
+
+.status-bar__column:nth-child(2) {
   display: flex;
   justify-content: center;
 }
-.status-bar__column:nth-child(3){
+
+.status-bar__column:nth-child(3) {
   display: flex;
-  justify-content:flex-end;
+  justify-content: flex-end;
   align-items: center;
 }
-.status-bar__column .fa-battery-full{margin:0 3px;}
+
+@keyframes batteryColor{
+  from{
+    color:#2e363e;
+  }
+  to{
+    color:rgba(33, 190, 106);
+  }
+}
+
+.status-bar__column .fa-battery-full {
+  margin: 0 3px;
+  animation:batteryColor .8s linear infinite;
+  -webkit-animation:batteryColor .8s linear infinite;
+  animation-direction:alternate-reverse
+}

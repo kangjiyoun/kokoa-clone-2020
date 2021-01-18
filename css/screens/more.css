@@ -1,5 +1,35 @@
-.more-screen .icon-row{
+.more-screen .icon-row__icon{
 margin-top:35px;
+}
+
+.more-screen .icon-row__icon i,
+.more-screen .icon-row__icon span{
+  transition:color .3s ease-out;
+  -webkit-transition:color .3s ease-out;
+  -moz-transition:color .3s ease-out;
+  -ms-transition:color .3s ease-out;
+  -o-transition:color .3s ease-out;
+}
+
+@keyframes rotateIco{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+    transform: rotateY(360deg) ;
+    -webkit-transform: rotateY(360deg) ;
+    -moz-transform: rotateY(360deg) ;
+    -ms-transform: rotateY(360deg) ;
+    -o-transform: rotateY(360deg) ;
+}
+}
+
+.more-screen .icon-row__icon:hover i,
+.more-screen .icon-row__icon:hover  span{
+  color:var(--common-grey);
+  animation: rotateIco .4s ease-out forwards;
+  -webkit-animation: rotateIco .4s ease-out forwards;
 }
 
 .more-suggestions{
@@ -32,7 +62,16 @@ margin-top:35px;
   justify-content: center;
   align-items: center;
   margin-bottom:10px;
+  transition: all .3s ease-out;
+  -webkit-transition: all .3s ease-out;
+  -moz-transition: all .3s ease-out;
+  -ms-transition: all .3s ease-out;
+  -o-transition: all .3s ease-out;
 }
+.more-suggestions__icon-image:hover{
+  background-color:#333;
+}
+
 .more-suggestions__icon-image i{
   font-size:32px;
   color:#fff;
